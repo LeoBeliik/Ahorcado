@@ -12,6 +12,7 @@ import javafx.stage.Stage;
 import java.util.ArrayList;
 import java.util.Random;
 
+
 public class Controler extends Main {
 
     public Button btnUno, btnSalir, btnReset;
@@ -25,7 +26,7 @@ public class Controler extends Main {
     private String guess;
     private int body = 0;
     private boolean flag = true;
-    private ArrayList<String> letras = new ArrayList<>();
+    private final ArrayList<String> letras = new ArrayList<>();
 
  @FXML
     private void initialize(){

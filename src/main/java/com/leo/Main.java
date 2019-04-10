@@ -28,7 +28,7 @@ public class Main extends Application {
         primaryStage.show();
     }
 
-    public void fin(String lbl){
+    void fin(String lbl){
 
         Stage window = new Stage();
         window.initModality(Modality.APPLICATION_MODAL);
