@@ -1,23 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
-<?import javafx.scene.Cursor?>
-<?import javafx.scene.effect.InnerShadow?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
+
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="401.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.leo.Controler">
    <right>
       <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-         <Button fx:id="btnUno" layoutX="21.0" layoutY="76.0" mnemonicParsing="false" onAction="#onClick"
-                 prefHeight="38.0" prefWidth="130.0" text="Try">
-            <font>
-               <Font size="14.0"/>
-            </font>
-         </Button>
+         <children>
+            <Button fx:id="btnUno" layoutX="21.0" layoutY="76.0" mnemonicParsing="false" onAction="#onClick" prefHeight="38.0" prefWidth="130.0" text="Try">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+         </children>
       </Pane>
    </right>
    <center>
@@ -25,94 +29,101 @@
    </center>
    <left>
       <Pane prefHeight="194.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-         <Line endX="100.0" layoutX="116.0" layoutY="25.0" rotate="90.0" scaleX="0.25" startX="-100.0"/>
-         <Line endX="100.0" layoutX="48.0" scaleX="0.75" scaleY="5.0" startX="-100.0"/>
-         <Line fx:id="Torso" endX="100.0" layoutX="116.0" layoutY="176.0" rotate="90.0" scaleX="0.6" startX="-100.0"/>
-         <Line fx:id="BI" endX="100.0" layoutX="138.0" layoutY="153.0" rotate="45.0" scaleX="0.3" startX="-100.0"/>
-         <Line fx:id="BD" endX="100.0" layoutX="94.0" layoutY="153.0" rotate="-45.0" scaleX="0.3" startX="-100.0"/>
-         <Line fx:id="PD" endX="100.0" layoutX="94.0" layoutY="258.0" rotate="-45.0" scaleX="0.3" startX="-100.0"/>
-         <Line fx:id="PI" endX="100.0" layoutX="138.0" layoutY="258.0" rotate="45.0" scaleX="0.3" startX="-100.0"/>
-         <Circle fill="#1f93ff00" layoutX="116.0" layoutY="83.0" radius="33.0" stroke="BLACK" strokeType="INSIDE"/>
-         <Pane fx:id="livPane" layoutX="80.0" layoutY="50.0" prefHeight="66.0" prefWidth="73.0">
-            <Ellipse layoutX="53.0" layoutY="22.0" radiusX="12.0" radiusY="8.0" scaleX="0.75" scaleY="0.75"
-                     scaleZ="0.75" stroke="BLACK" strokeType="INSIDE">
-               <fill>
-                  <RadialGradient centerX="0.49999999999999994" centerY="0.5333333333333333" radius="0.5">
-                     <stops>
-                        <Stop color="#006523fc"/>
-                        <Stop color="#fffefe" offset="1.0"/>
-                     </stops>
-                  </RadialGradient>
-               </fill>
-            </Ellipse>
-            <Ellipse layoutX="23.0" layoutY="22.0" radiusX="12.0" radiusY="8.0" scaleX="0.75" scaleY="0.75"
-                     scaleZ="0.75" stroke="BLACK" strokeType="INSIDE">
-               <fill>
-                  <RadialGradient centerX="0.49999999999999994" centerY="0.5333333333333333" radius="0.5">
-                     <stops>
-                        <Stop color="#006523fc"/>
-                        <Stop color="#fffefe" offset="1.0"/>
-                     </stops>
-                  </RadialGradient>
-               </fill>
-            </Ellipse>
-            <Ellipse fill="#1f93ff00" layoutX="37.0" layoutY="47.0" radiusX="15.0" radiusY="13.0" stroke="BLACK"
-                     strokeType="INSIDE"/>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f5f2f2" height="17.0" layoutX="16.0" layoutY="32.0"
-                       stroke="TRANSPARENT" strokeType="INSIDE" width="41.0"/>
-         </Pane>
-         <Pane fx:id="dedPane" layoutX="78.0" layoutY="50.0" prefHeight="66.0" prefWidth="73.0" visible="false">
-            <Circle fill="#1f93ff00" layoutX="38.0" layoutY="33.0" radius="33.0" stroke="BLACK" strokeType="INSIDE"/>
-            <Ellipse fill="#1f93ff00" layoutX="37.0" layoutY="52.0" radiusX="13.0" radiusY="11.0" stroke="BLACK"
-                     strokeType="INSIDE"/>
-            <Text layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="X         X"
-                  wrappingWidth="51.13671875"/>
-         </Pane>
+         <children>
+            <Line endX="100.0" layoutX="116.0" layoutY="25.0" rotate="90.0" scaleX="0.25" startX="-100.0" />
+            <Line endX="100.0" layoutX="48.0" scaleX="0.75" scaleY="5.0" startX="-100.0" />
+            <Line fx:id="Torso" endX="100.0" layoutX="116.0" layoutY="176.0" rotate="90.0" scaleX="0.6" startX="-100.0" />
+            <Line fx:id="BI" endX="100.0" layoutX="138.0" layoutY="153.0" rotate="45.0" scaleX="0.3" startX="-100.0" />
+            <Line fx:id="BD" endX="100.0" layoutX="94.0" layoutY="153.0" rotate="-45.0" scaleX="0.3" startX="-100.0" />
+            <Line fx:id="PD" endX="100.0" layoutX="94.0" layoutY="258.0" rotate="-45.0" scaleX="0.3" startX="-100.0" />
+            <Line fx:id="PI" endX="100.0" layoutX="138.0" layoutY="258.0" rotate="45.0" scaleX="0.3" startX="-100.0" />
+            <Circle fill="#1f93ff00" layoutX="116.0" layoutY="83.0" radius="33.0" stroke="BLACK" strokeType="INSIDE" />
+            <Pane fx:id="livPane" layoutX="80.0" layoutY="50.0" prefHeight="66.0" prefWidth="73.0">
+               <children>
+                  <Ellipse layoutX="53.0" layoutY="22.0" radiusX="12.0" radiusY="8.0" scaleX="0.75" scaleY="0.75" scaleZ="0.75" stroke="BLACK" strokeType="INSIDE">
+                     <fill>
+                        <RadialGradient centerX="0.49999999999999994" centerY="0.5333333333333333" radius="0.5">
+                           <stops>
+                              <Stop color="#006523fc" />
+                              <Stop color="#fffefe" offset="1.0" />
+                           </stops>
+                        </RadialGradient>
+                     </fill>
+                  </Ellipse>
+                  <Ellipse layoutX="23.0" layoutY="22.0" radiusX="12.0" radiusY="8.0" scaleX="0.75" scaleY="0.75" scaleZ="0.75" stroke="BLACK" strokeType="INSIDE">
+                     <fill>
+                        <RadialGradient centerX="0.49999999999999994" centerY="0.5333333333333333" radius="0.5">
+                           <stops>
+                              <Stop color="#006523fc" />
+                              <Stop color="#fffefe" offset="1.0" />
+                           </stops>
+                        </RadialGradient>
+                     </fill>
+                  </Ellipse>
+                  <Ellipse fill="#1f93ff00" layoutX="37.0" layoutY="47.0" radiusX="15.0" radiusY="13.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f5f2f2" height="17.0" layoutX="16.0" layoutY="32.0" stroke="TRANSPARENT" strokeType="INSIDE" width="41.0" />
+               </children>
+            </Pane>
+            <Pane fx:id="dedPane" layoutX="78.0" layoutY="50.0" prefHeight="66.0" prefWidth="73.0" visible="false">
+               <children>
+                  <Circle fill="#1f93ff00" layoutX="38.0" layoutY="33.0" radius="33.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Ellipse fill="#1f93ff00" layoutX="37.0" layoutY="52.0" radiusX="13.0" radiusY="11.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Text layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="X         X" wrappingWidth="51.13671875" />
+               </children>
+            </Pane>
+         </children>
       </Pane>
    </left>
    <bottom>
       <Pane prefHeight="125.0" prefWidth="372.0" BorderPane.alignment="CENTER">
-         <TextArea fx:id="txtLetras" disable="true" editable="false" layoutX="200.0" prefHeight="107.0"
-                   prefWidth="368.0">
-            <cursor>
-               <Cursor fx:constant="DEFAULT"/>
-            </cursor>
-         </TextArea>
-         <Pane fx:id="pnWin" prefHeight="200.0" prefWidth="200.0" visible="false">
-            <ImageView fitHeight="121.0" fitWidth="190.0" layoutX="104.0" layoutY="-75.0" pickOnBounds="true"
-                       preserveRatio="true">
-               <Image url="@../../img/firework.gif"/>
-            </ImageView>
-            <ImageView fitHeight="78.0" fitWidth="102.0" layoutX="430.0" layoutY="-130.0" pickOnBounds="true"
-                       preserveRatio="true">
-               <Image url="@../../img/animated-fireworks-image-0065.gif"/>
-            </ImageView>
-            <ImageView fitHeight="103.0" fitWidth="143.0" layoutX="96.0" layoutY="-228.0" pickOnBounds="true"
-                       preserveRatio="true">
-               <Image url="@../../img/giphy.gif"/>
-            </ImageView>
-            <ImageView fitHeight="113.0" fitWidth="125.0" layoutX="391.0" layoutY="3.0" pickOnBounds="true"
-                       preserveRatio="true">
-               <Image url="@../../img/534355_764d8.gif"/>
-            </ImageView>
-         </Pane>
-         <Label layoutX="218.0" layoutY="-17.0" prefHeight="17.0" prefWidth="163.0" text="Letras utilizadas:"/>
+         <children>
+            <TextArea fx:id="txtLetras" disable="true" editable="false" layoutX="200.0" prefHeight="107.0" prefWidth="368.0" wrapText="true">
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </TextArea>
+            <Pane fx:id="pnWin" prefHeight="200.0" prefWidth="200.0" visible="false">
+               <children>
+                  <ImageView fitHeight="121.0" fitWidth="190.0" layoutX="104.0" layoutY="-75.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../img/firework.gif" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="78.0" fitWidth="102.0" layoutX="430.0" layoutY="-130.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../img/animated-fireworks-image-0065.gif" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="103.0" fitWidth="143.0" layoutX="96.0" layoutY="-228.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../img/giphy.gif" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="113.0" fitWidth="125.0" layoutX="391.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../img/534355_764d8.gif" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Label layoutX="218.0" layoutY="-17.0" prefHeight="17.0" prefWidth="163.0" text="Letras utilizadas:" />
+         </children>
       </Pane>
    </bottom>
    <top>
       <Pane prefHeight="87.0" prefWidth="600.0" BorderPane.alignment="CENTER">
-         <Label fx:id="lblUno" alignment="TOP_CENTER" prefHeight="84.0" prefWidth="600.0" textAlignment="CENTER">
-            <font>
-               <Font size="55.0"/>
-            </font>
-            <effect>
-               <InnerShadow/>
-            </effect>
-         </Label>
-         <Button fx:id="btnReset" layoutX="486.0" layoutY="3.0" mnemonicParsing="false" onAction="#onReset"
-                 prefHeight="28.0" prefWidth="100.0" text="Reset"/>
-         <Button fx:id="btnSalir" layoutX="14.0" layoutY="4.0" mnemonicParsing="false" onAction="#onExit"
-                 prefHeight="26.0" prefWidth="56.0" text="Salir"/>
+         <children>
+            <Label fx:id="lblUno" alignment="TOP_CENTER" prefHeight="84.0" prefWidth="600.0" textAlignment="CENTER">
+               <font>
+                  <Font size="55.0" />
+               </font>
+               <effect>
+                  <InnerShadow />
+               </effect>
+            </Label>
+            <Button fx:id="btnReset" layoutX="486.0" layoutY="3.0" mnemonicParsing="false" onAction="#onReset" prefHeight="28.0" prefWidth="100.0" text="Reset" />
+            <Button fx:id="btnSalir" layoutX="14.0" layoutY="4.0" mnemonicParsing="false" onAction="#onExit" prefHeight="26.0" prefWidth="56.0" text="Salir" />
+         </children>
       </Pane>
    </top>
 </BorderPane>

@@ -59,7 +59,8 @@ public class Controler extends Main {
         BI.setVisible(true);
         BD.setVisible(true);
         Torso.setVisible(true);
-        txtLetras.setText("");
+        txtLetras.clear();
+        letras.clear();
 
         initialize();
     }
