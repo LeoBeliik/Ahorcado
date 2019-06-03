@@ -15,12 +15,18 @@ import java.util.Random;
 
 public class Controler extends Main {
 
-    public Button btnUno, btnSalir, btnReset;
-    public Label lblUno;
-    public TextField txtLetra;
-    public Line BI,BD,PI,PD,Torso;
-    public Pane dedPane, livPane, pnWin;
-    public TextArea txtLetras;
+    @FXML
+    private Button btnUno, btnSalir;
+    @FXML
+    private Label lblUno;
+    @FXML
+    private TextField txtLetra;
+    @FXML
+    private Line BI, BD, PI, PD, Torso;
+    @FXML
+    private Pane dedPane, livPane, pnWin;
+    @FXML
+    private TextArea txtLetras;
 
     private char[] word;
     private String guess;
@@ -28,22 +34,22 @@ public class Controler extends Main {
     private boolean flag = true;
     private final ArrayList<String> letras = new ArrayList<>();
 
- @FXML
-    private void initialize(){
+    @FXML
+    private void initialize() {
         //selecciona una palabra aleatoria del enum(Palabras)
         Random random = new Random();
         Palabras randomX = Palabras.values()[random.nextInt(Palabras.values().length)];
 
         guess = randomX.toString();
         lblUno.setText(randomX.toString());
-        lblUno.setText(lblUno.getText().replaceAll("[a-zA-Z]","_")); //convierte la palabra en *incognita*
+        lblUno.setText(lblUno.getText().replaceAll("[a-zA-Z]", "-")); //convierte la palabra en *incognita*
         word = new char[(int) randomX.toString().chars().count()];//inicializa el char deacuerdo a la cantidad de letras de la palabra
 
         //string to char
-        for (int i=0; i < lblUno.getText().chars().count(); i++)
+        for (int i = 0; i < lblUno.getText().chars().count(); i++)
             word[i] = lblUno.getText().charAt(i);
-
     }
+
     //evento del boton "Reset"
     public void onReset() {
         body = 0;
@@ -64,36 +70,39 @@ public class Controler extends Main {
 
         initialize();
     }
+
     //evento del boton "Salir"
     public void onExit() {
         Stage stage = (Stage) btnSalir.getScene().getWindow();
         stage.close();
     }
+
     //evento del boton "try"
-    public void onClick(){
+    public void onClick() {
 
         //por si el textFiel esta en blanco
         if (txtLetra.getText().equals(""))
             return;
 
-        char letra = txtLetra.getText().toLowerCase().charAt(0); //obtiene la letra (en minuscula) del textField
+        char letra = txtLetra.getText().toUpperCase().charAt(0); //obtiene la letra (en mayusculas) del textField
         //muestra las letras o palabras usadas hasta el momento
         letras.add(txtLetra.getText());
         txtLetras.setText(letras.toString());
 
         //Por si adivina la palabra completa
-        if (txtLetra.getText().chars().count()!=1) {
-            if (txtLetra.getText().toLowerCase().equals(guess)) {
+        if (txtLetra.getText().chars().count() != 1) {
+            if (txtLetra.getText().toUpperCase().equals(guess)) {
                 lblUno.setText(guess);
                 win();
             } else {
                 dead();
+                txtLetra.setText("");
             }
             return; //return para que no se utilize la primer letra si se ingresa una palabra
         }
 
         //si adivina la letra, esta es agregada al array de characters
-        for (int i=0; i < lblUno.getText().chars().count(); i++) {
+        for (int i = 0; i < lblUno.getText().chars().count(); i++) {
             if (guess.charAt(i) == letra) {
                 word[i] = letra;
                 flag = false;
@@ -106,11 +115,11 @@ public class Controler extends Main {
             flag = true;
 
         //mostrar el progreso de la palabra
-        if (body!=6)
+        if (body != 6)
             lblUno.setText(String.copyValueOf(word));
 
         //dicta que se ganó el juego
-        if (lblUno.getText().equals(guess) && body<6)
+        if (lblUno.getText().equals(guess) && body < 6)
             win();
 
         //limpia y da focus al textField
@@ -119,6 +128,7 @@ public class Controler extends Main {
 
     }
 
+    //maneja las vidas
     private void dead() {
         body++;
 

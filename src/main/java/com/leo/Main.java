@@ -28,7 +28,7 @@ public class Main extends Application {
         primaryStage.show();
     }
 
-    void fin(String lbl){
+    void fin(String lbl) {
 
         Stage window = new Stage();
         window.initModality(Modality.APPLICATION_MODAL);
@@ -44,15 +44,15 @@ public class Main extends Application {
         Scene sc = new Scene(box);
         window.setScene(sc);
 
-        if (lbl.equals("win")){
-            window.setTitle("Winner, Winner blah bla gay dinner");
+        if (lbl.equals("win")) {
+            window.setTitle("CORRECTO!");
             label.setText("pue Haz GANAO");
         } else {
-            window.setTitle("JAA LOOSEEERRRRR");
-            label.setText("PERDEDOR!");
+            window.setTitle("INCORRECTO!");
+            label.setText("Mejor suerte la proxima!");
         }
 
-        btn.setOnAction(e->window.close());
+        btn.setOnAction(e -> window.close());
         window.showAndWait();
     }
 }

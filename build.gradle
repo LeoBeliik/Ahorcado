@@ -5,9 +5,8 @@ plugins {
 }
 
 group 'com.leo'
-version '1.0-SNAPSHOT'
-
-sourceCompatibility = 11
+version 'Beta-1.0'
+mainClassName = 'com.leo.Main'
 
 repositories {
     mavenCentral()
@@ -21,5 +20,3 @@ javafx {
     modules = ['javafx.controls', 'javafx.fxml']
     version = '11.0.2'
 }
-
-mainClassName = 'com.leo.Main'
